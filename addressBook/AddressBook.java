@@ -169,12 +169,9 @@ public class AddressBook{
 		for (Person tempPerson : entries) {
 			if (tempPerson.getPhoneNumber() == phoneNumber) {
 				System.out.println(tempPerson.getInformation());
-			}
-			else {
-				System.out.println("Error");
+				return tempPerson;
 			}
 		}
-		
 		return null;
 
 	}
@@ -182,9 +179,10 @@ public class AddressBook{
 	private Person findPerson(){
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Phone Number of the person :");
+		System.out.println("Phone Number of the person that you want to find:");
 		long phoneNumber = sc.nextLong();
 		return findPerson(phoneNumber);
+		
 
 	}
 	
@@ -204,7 +202,7 @@ public class AddressBook{
 						Collections.sort(entries, Compare.firstNameComparator);
 						break;
 			case 2:
-						Collections.sort(entries, Compare.fullNameComparator);
+						Collections.sort(entries, Compare.zipComparator);
 						break;
 			
 			default:
@@ -220,7 +218,7 @@ public class AddressBook{
 	private void displayEntries(){
 		System.out.println("## Entries ##");
 		for (Person person : entries) {
-			System.out.println(person.getInformation());
+			System.out.println(person.getInformation()+"\n");
 		
 		}
 
@@ -229,20 +227,20 @@ public class AddressBook{
 
 	public static void showMenu(){
 		System.out.println("\n");
-		System.out.println("=============== # Menu #==================");
-		
-		System.out.println("=\t 1.Add  a Person\t\t =");
-		System.out.println("==\t 2.Edit  a Person\t\t==");
-		System.out.println("=\t 3.Delete  a Person\t\t =");
-		System.out.println("==\t 4.Find  a Person\t\t==");
-		System.out.println("=\t 5.Sort Address Book \t\t =");
-		System.out.println("==\t 6.View Address Book\t\t==");
-		System.out.println("=\t 7.Quit\t\t\t\t =");
-		System.out.println("==========================================");
+		System.out.println("\t==========================================");
+		System.out.println("\t=============== # Menu #==================");
+		System.out.println("\t=\t 1.Add  a Person\t\t =");
+		System.out.println("\t==\t 2.Edit  a Person\t\t==");
+		System.out.println("\t=\t 3.Delete  a Person\t\t =");
+		System.out.println("\t==\t 4.Find  a Person\t\t==");
+		System.out.println("\t=\t 5.Sort Address Book \t\t =");
+		System.out.println("\t==\t 6.View Address Book\t\t==");
+		System.out.println("\t=\t 7.Quit\t\t\t\t =");
+		System.out.println("\t==========================================");
 	}
 
 	public static void main(String args[]){
-		System.out.println("##=== Welcome to Address Book ===##");
+		System.out.println("\t##  ===  Welcome to Address Book  ===  ##");
 
 		
 		Scanner sc = new Scanner(System.in);

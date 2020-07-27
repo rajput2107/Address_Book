@@ -86,6 +86,7 @@ public class Person {
     }
 
     public String getInformation(){
-        return "First Name-\t"+this.getFirstName()+"\nLast Name-\t"+this.getLastName()+"\nAddress\t-\t"+this.getAddress()+"\nCity\t-\t"+this.getCity()+"\nState\t-\t"+this.getState()+"\nZip\t-\t"+this.getZip()+"\nPhone Number-\t"+this.getPhoneNumber();
+    	System.out.println("\n*********************************\n");
+        return "First Name: \t"+this.getFirstName()+"\nLast Name  : \t"+this.getLastName()+"\nAddress  : \t"+this.getAddress()+"\nCity: \t\t"+this.getCity()+"\nState: \t\t"+this.getState()+"\nZip  : \t\t"+this.getZip()+"\nPhone Number: \t"+this.getPhoneNumber();
     }
 }
